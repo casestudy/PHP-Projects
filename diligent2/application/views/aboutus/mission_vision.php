@@ -1,0 +1,1 @@
+<h1>This is the mission and vision page</h1>

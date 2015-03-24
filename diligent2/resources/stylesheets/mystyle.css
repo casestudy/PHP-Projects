@@ -1,0 +1,9 @@
+.myCarousel{
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 150px;
+}
+
+#myfooter{
+    position: absolute;
+}

@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|resources|robot\.txt)
+RewriteRule ^(.*)$ /diligent2/index.php/$1 [L]
