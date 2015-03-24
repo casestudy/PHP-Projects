@@ -1,0 +1,18 @@
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+#rights{
+    text-align: center;
+}
+
+.headings{
+    text-align: center;
+    text-decoration: underline;
+}
+
+#middle{
+   /* height: 480px;*/
+    overflow: auto;
+}
