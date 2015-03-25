@@ -20,7 +20,8 @@
  	And For some reasons im unable to login to my account,
  	When I click the Forgotten username or password Button found just below my Login button
  	Then I should see two search bars one would be Search by "username" and the other will be Search by "email"
- 	When I enter either my "username" or "email" addres correctly,
- 	Then I should a messages which says an "password confirmation change sent to the email I entered".
- 	When I enter a wrong "username" or "email",
- 	Then I should see a message which says "Error sending password change confirmation email"
+ 	When I enter either my "username" or "email" address,
+ 	And The Protect Usernames check box in site policies of my moodle installation is unchecked,
+ 	Then I should see a message which says: An email has been sent to your address at *****@server.com.
+ 	When The Protect Usernames of my moodle installation is checked,
+ 	Then I should see a message which says: If you supplied a correct username or email address then an email should have been sent to you.

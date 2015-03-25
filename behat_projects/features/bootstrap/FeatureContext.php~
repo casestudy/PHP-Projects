@@ -26,7 +26,10 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iMOnTheWelcomePageOfMyMoodleInstallation()
     {
-    	echo "This is the home page";
+    	echo "You are not logged in at the top right conner of my screen just below my browser's search bar \n" ;
+        echo "Full Site name of the top left conner of my screen \n" ;
+        echo "Front Page Summary on the top right conner of my screen \n" ;
+        
     }
 
     /**
@@ -34,7 +37,11 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iVeClikOnTheButtonFoundOnTheTopRightConnerOfMyScreenOrOnTheFootOfMyScreen()
     {
-    	echo "Welcome to the login page";
+        echo "Log in" ;
+        echo "\n" ;
+        echo "Username ". "<input type='text'/>" ;
+        echo "\n" ;
+        echo "Password ". "<input type='password'/>" ;
     }
 
     /**
@@ -42,7 +49,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iMAbleToSeeTheUsernameAndPasswordField()
     {
-    	echo "Enter your username and password" ;
+        echo " " ;
     }
 
     /**
@@ -50,8 +57,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iEnterMyAndInTheRespectiveFields($arg1, $arg2)
     {
-    	/*If im using active records, i will do */
-    	echo "I will perform my database check here to be sure the user do exist and include the successpage if the return value is true";
+        echo $arg1." ".$arg2 ;
     }
 
     /**
@@ -60,6 +66,13 @@ class FeatureContext implements Context, SnippetAcceptingContext
     public function iShouldSeeAnotherPageWhichSays($arg1)
     {
     	echo $arg1 ;
+    	echo "You are not logged in at the top right conner of my screen just below my browser's search bar \n " ;
+      	echo "Full Site name of the top left conner of my screen \n" ;
+        echo "Front Page Summary on the top right conner of my screen \n" ;
+        echo "Available courses just to the right of the Full site name \n";
+        echo "Navigation just below the Full site name \n" ;
+        echo "Administration just below the Navigation \n" ;
+        echo "Calender just below the Front Page summary \n" ;
     }
 
     /**
@@ -67,8 +80,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function ifMyAndOrIsWrong($arg1, $arg2)
     {
-   
-    	echo "Incorrect username or password, please try again" ;
+        echo "" ;
     }
 
     /**
@@ -76,7 +88,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iShouldSee($arg1)
     {
-    	echo $arg1 ;
+        echo "Invalid login, please try again" ;
     }
 
     /**
@@ -84,7 +96,9 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iMOnTheWelcomePageOfMyMoodle()
     {
-    	echo "This is the home page";
+        echo "You are not logged in at the top right conner of my screen just below my browser's search bar \n" ;
+        echo "Full Site name of the top left conner of my screen \n" ;
+        echo "Front Page Summary on the top right conner of my screen \n" ;
     }
 
     /**
@@ -92,7 +106,18 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iVeClikOnTheButtonFoundOnTheTopRightConnerOfMyScreen()
     {
-    	echo "Welcome to the login screen";
+        echo "Log in \n" ;
+        echo "Username ". "<input type='text'/>" ;
+        echo "\n" ;
+        echo "Password ". "<input type='password'/>" ;
+    }
+
+    /**
+     * @When I enter my username and password in the respective fields,
+     */
+    public function iEnterMyUsernameAndPasswordInTheRespectiveFields($arg1 , $arg2)
+    {
+       echo $arg1." ".$arg2;
     }
 
     /**
@@ -100,7 +125,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function forSomeReasonsImUnableToLoginToMyAccount()
     {
-    	echo "Click the button below to retrieve your password";
+        echo " ";
     }
 
     /**
@@ -108,7 +133,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iClickTheForgottenUsernameOrPasswordButtonFoundJustBelowMyLoginButton()
     {
-    	echo "Enter your username or email to retrieve your details" ;
+        echo "To reset your password, submit your username or your email address below. If we can find you in the database, an email will be sent to your email address, with instructions how to get access again.";
     }
 
     /**
@@ -116,41 +141,54 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iShouldSeeTwoSearchBarsOneWouldBeSearchByAndTheOtherWillBeSearchBy($arg1, $arg2)
     {
-    	echo "Search by ".$arg1 ;
-    	echo "\nor\n";
-    	echo "Search by ".$arg2 ;
+        echo "Search by ".$arg1 ;
+        echo "\n" ;
+        echo $arg1." <input type='text'/>" ;
+        echo "\n";
+        echo "Search by ".$arg2 ;
+        echo "\n" ;
+        echo $arg2." <input type='email'/>" ;
     }
 
     /**
-     * @When I enter either my :arg1 or :arg2 addres correctly,
+     * @When I enter either my :arg1 or :arg2 address,
      */
-    public function iEnterEitherMyOrAddresCorrectly($arg1, $arg2)
+    public function iEnterEitherMyOrAddress($arg1, $arg2)
     {
-        echo "It means that your ".$arg1." and ".$arg2." are correct" ;
+        echo $arg1." ".$arg2 ;
     }
 
     /**
-     * @Then I should a messages which says an :arg1.
+     * @When The Protect Usernames check box in site policies of my moodle installation is unchecked,
      */
-    public function iShouldAMessagesWhichSaysAn($arg1)
+    public function theProtectUsernamesCheckBoxInSitePoliciesOfMyMoodleInstallationIsUnchecked()
     {
-    	echo "Shows you the available courses" ;
+        echo " " ;
     }
 
     /**
-     * @When I enter a wrong :arg1 or :arg2,
+     * @Then I should see a message which says: An email has been sent to your address at *****@server.com.
      */
-    public function iEnterAWrongOr($arg1, $arg2)
+    public function iShouldSeeAMessageWhichSaysAnEmailHasBeenSentToYourAddressAtServerCom()
     {
-    	echo "It means that your ".$arg1." and/or ".$arg2." is wrong" ;
+        echo "An email has been send to your address ar *****@server.com" ;
     }
 
     /**
-     * @Then I should see a message which says :arg1
+     * @When The Protect Usernames of my moodle installation is checked,
      */
-    public function iShouldSeeAMessageWhichSays($arg1)
+    public function theProtectUsernamesOfMyMoodleInstallationIsChecked()
     {
-    	echo $arg1 ;
+        echo " " ;
     }
 
+    /**
+     * @Then I should see a message which says: If you supplied a correct username or email address then an email should have been sent to you.
+     */
+    public function iShouldSeeAMessageWhichSaysIfYouSuppliedACorrectUsernameOrEmailAddressThenAnEmailShouldHaveBeenSentToYou()
+    {
+       echo "if you supplied a correct username or email address, then an email should have been sent to you" ;
+    }
+
+    
 }
